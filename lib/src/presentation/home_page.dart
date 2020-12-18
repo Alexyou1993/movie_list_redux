@@ -1,9 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:movie_list_redux/src/containers/movies.container.dart';
 import 'package:movie_list_redux/src/models/movie.dart';
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
@@ -18,7 +15,6 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {

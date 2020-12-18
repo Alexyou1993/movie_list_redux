@@ -13,17 +13,19 @@ class AppMiddleware {
 
   final YtsApi _ytsApi;
 
-  List<Middleware<AppState>>get middleware {
+  List<Middleware<AppState>> get middleware {
     return <Middleware<AppState>>[
       _getMoviesMiddleware,
     ];
   }
-  Future<void> _getMoviesMiddleware(Store<AppState> store, dynamic action, NextDispatcher next)  async {
+
+  Future<void> _getMoviesMiddleware(
+      Store<AppState> store, dynamic action, NextDispatcher next) async {
     next(action);
     if (action is! GetMovies) {
       return;
     }
-  
+
     try {
       final List<Movie> movies = await _ytsApi.getMovies();
       final GetMoviesSuccessful successful = GetMoviesSuccessful(movies);

@@ -1,15 +1,15 @@
+library get_movies;
+
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:movie_list_redux/src/models/movie.dart';
 
-class GetMovies {}
+part 'get_movies.freezed.dart';
 
-class GetMoviesSuccessful {
-  GetMoviesSuccessful(this.movies);
+@freezed
+abstract class GetMovies with _$GetMovies {
+  const factory GetMovies.start(int page) = GetMoviesStart;
 
-  final List<Movie> movies;
-}
+  const factory GetMovies.successful(List<Movie> movies) = GetMoviesSuccessful;
 
-class GetMovieError {
-  GetMovieError(this.error);
-
-  final dynamic error;
+  const factory GetMovies.error(dynamic error) = GetMoviesError;
 }

@@ -20,7 +20,7 @@ void main() {
     middleware: appMiddleware.middleware,
   );
 
-  store.dispatch(GetMovies());
+  store.dispatch(GetMovies.start(initialState.page));
   runApp(MyApp(store: store));
 }
 

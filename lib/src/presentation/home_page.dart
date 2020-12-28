@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:movie_list_redux/src/actions/get_movies.dart';
-import 'package:movie_list_redux/src/actions/set_genres.dart';
-import 'package:movie_list_redux/src/actions/set_order_by.dart';
-import 'package:movie_list_redux/src/actions/set_quality.dart';
-import 'package:movie_list_redux/src/containers/genre_container.dart';
-import 'package:movie_list_redux/src/containers/is_loading_container.dart';
-import 'package:movie_list_redux/src/containers/movies.container.dart';
-import 'package:movie_list_redux/src/containers/order_by_container.dart';
-import 'package:movie_list_redux/src/containers/quality_container.dart';
-import 'package:movie_list_redux/src/models/app_state.dart';
-import 'package:movie_list_redux/src/models/movie.dart';
-import 'package:redux/src/store.dart';
+import 'package:movie_list_redux/src/actions/index.dart';
+import 'package:movie_list_redux/src/containers/index.dart';
+import 'package:movie_list_redux/src/models/index.dart';
+import 'package:redux/redux.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
@@ -35,6 +27,8 @@ class HomePage extends StatelessWidget {
           builder: (BuildContext context, List<Movie> movies) {
             return Scaffold(
               appBar: AppBar(
+                centerTitle: true,
+                title: const Text('Movie List by Iura'),
                 actions: <Widget>[
                   OrderByContainer(
                     builder: (BuildContext context, String orderBy) {

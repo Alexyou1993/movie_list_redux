@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart';
 import 'package:meta/meta.dart';
-import 'package:movie_list_redux/src/models/movie.dart';
+import 'package:movie_list_redux/src/models/index.dart';
 
 class YtsApi {
   const YtsApi({@required Client client})
